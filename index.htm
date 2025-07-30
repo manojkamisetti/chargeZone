@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grand Junction - Electrical & Plumbing Services</title>
   <style>
     /* ---------- Base Styles ---------- */
@@ -20,7 +20,7 @@
       border-radius: 12px;
       box-shadow: 0 7px 32px rgba(99, 153, 220, 0.11);
       overflow: hidden;
-      opacity: 0;                /* for fade-in */
+      opacity: 0; /* for fade-in */
       transition: opacity 0.9s;
     }
 
@@ -33,14 +33,15 @@
       position: relative;
       overflow: hidden;
     }
-    .logo-svg, .header img {
+    .logo-svg,
+    .header img {
       max-width: 80px;
       margin-bottom: 18px;
 
       /* Animate logo */
       transform: scale(0.8);
       opacity: 0;
-      transition: transform 0.8s cubic-bezier(.4,1.6,.4,1), opacity 1s;
+      transition: transform 0.8s cubic-bezier(.4, 1.6, .4, 1), opacity 1s;
       display: inline-block;
     }
     .page-loaded .logo-svg,
@@ -75,17 +76,20 @@
       transition: color 0.2s;
       position: relative;
     }
-    nav a:hover { color: #1a385e; }
+    nav a:hover {
+      color: #1a385e;
+    }
     /* Sliding underline */
     nav a::after {
-      content: "";
+      content: '';
       display: block;
       width: 0;
       height: 2px;
       background: #1a77be;
-      transition: width 0.4s cubic-bezier(0.41,1,0.41,1);
+      transition: width 0.4s cubic-bezier(0.41, 1, 0.41, 1);
       position: absolute;
-      left: 0; bottom: -2px;
+      left: 0;
+      bottom: -2px;
     }
     nav a:hover::after {
       width: 100%;
@@ -95,7 +99,9 @@
     .section {
       opacity: 0;
       transform: translateY(60px);
-      transition: opacity 0.8s cubic-bezier(.4,1.6,.4,1), transform 0.8s cubic-bezier(.4,1.6,.4,1);
+      transition: opacity 0.8s cubic-bezier(.4, 1.6, .4, 1),
+        transform 0.8s cubic-bezier(.4, 1.6, .4, 1);
+      padding: 30px 42px;
     }
     .section.visible {
       opacity: 1;
@@ -107,9 +113,31 @@
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
+      padding-top: 0;
     }
-    .about-text { flex: 2; min-width: 260px; }
-    .about-contact { flex: 1; min-width: 200px; }
+    .about-text {
+      flex: 2;
+      min-width: 260px;
+    }
+    .about-contact {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* Serving locations badge */
+    .workloc {
+      background: #e4f5fd;
+      margin-top: 15px;
+      border-radius: 6px;
+      padding: 8px;
+      color: #245999;
+      font-size: 1.05rem;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold;
+    }
 
     /* ---------- Services ---------- */
     .services-list {
@@ -124,17 +152,19 @@
     .services-list li {
       background: #f1f7ff;
       border-radius: 10px;
-      box-shadow: 0 1px 5px rgba(90,145,215,0.05);
+      box-shadow: 0 1px 5px rgba(90, 145, 215, 0.05);
       padding: 19px 18px;
       width: 280px;
       min-height: 120px;
 
       /* Service card pop */
-      transition: transform 0.24s cubic-bezier(.46,1.4,.4,1), box-shadow 0.2s, background 0.13s;
+      transition: transform 0.24s cubic-bezier(.46, 1.4, .4, 1),
+        box-shadow 0.2s,
+        background 0.13s;
     }
     .services-list li:hover {
       transform: translateY(-8px) scale(1.04);
-      box-shadow: 0 8px 22px rgba(90,145,215,0.13);
+      box-shadow: 0 8px 22px rgba(90, 145, 215, 0.13);
       background: #e3f2fd;
       z-index: 2;
     }
@@ -143,35 +173,6 @@
       display: block;
       font-size: 1.04rem;
       margin-bottom: 5px;
-    }
-
-    /* ---------- Work Locations ---------- */
-    .workloc {
-      background: #e4f5fd;
-      margin-top: 15px;
-      border-radius: 6px;
-      padding: 8px;
-      color: #245999;
-      font-size: 1.05rem;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    /* ---------- Contact Info ---------- */
-    .contactinfo {
-      background: #f4fbff;
-      border-radius: 6px;
-      padding: 22px;
-      color: #204072;
-      font-size: 1.01rem;
-    }
-    .contactinfo span { display: block; margin-bottom: 3px; }
-    .contactinfo .label {
-      font-weight: bold;
-      color: #0676be;
-      margin-right: 6px;
     }
 
     /* ---------- Gallery ---------- */
@@ -187,19 +188,25 @@
       height: 120px;
       border-radius: 7px;
       object-fit: cover;
-      box-shadow: 0 2px 8px rgba(90,145,215,0.08);
+      box-shadow: 0 2px 8px rgba(90, 145, 215, 0.08);
 
       /* Gallery image hover effect */
-      transition: transform 0.35s cubic-bezier(.5,1.6,.4,1), box-shadow 0.3s;
+      transition: transform 0.35s cubic-bezier(.5, 1.6, .4, 1), box-shadow 0.3s;
+      cursor: pointer;
     }
     .gallery img:hover {
       transform: scale(1.065) rotate(-1deg);
-      box-shadow: 0 8px 26px 0 rgba(7,60,130,0.15);
+      box-shadow: 0 8px 26px 0 rgba(7, 60, 130, 0.15);
       z-index: 1;
     }
 
     /* ---------- Testimonials ---------- */
-    .testimonials { margin-top: 14px; }
+    .testimonials {
+      margin-top: 14px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .testimonial {
       background: #edf5fd;
       border-radius: 7px;
@@ -207,7 +214,6 @@
       margin-bottom: 14px;
       font-style: italic;
       color: #285088;
-      max-width: 600px;
       opacity: 0;
       transform: translateX(-40px);
       transition: opacity 0.7s, transform 0.7s;
@@ -225,7 +231,10 @@
       font-size: 0.97rem;
     }
 
-    /* ---------- Contact Form ---------- */
+    /* ---------- Contact Section ---------- */
+    #contact {
+      padding-bottom: 34px;
+    }
     .contact-form {
       background: #f5faff;
       border-radius: 8px;
@@ -241,6 +250,21 @@
       width: 100%;
       margin-bottom: 12px;
       font-size: 0.99rem;
+      font-family: inherit;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid #a8cee9;
+      border-radius: 4px;
+      padding: 8px 10px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #079fe2;
+      background: #fff;
     }
     .contact-form button {
       background: #079fe2;
@@ -253,20 +277,48 @@
       font-weight: 600;
       transition: background 0.24s;
     }
-    .contact-form button:hover { background: #1163b1; }
+    .contact-form button:hover {
+      background: #1163b1;
+    }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 900px) {
-      .container { max-width: 98vw; }
-      .section { padding: 24px 10px; }
-      .about { flex-direction: column; gap: 0; }
+      .container {
+        max-width: 98vw;
+      }
+      .section {
+        padding: 24px 10px;
+      }
+      .about {
+        flex-direction: column;
+        gap: 12px;
+      }
+      nav a {
+        margin: 0 15px;
+      }
+      .services-list {
+        justify-content: center;
+      }
     }
     @media (max-width: 600px) {
-      .container { border-radius: 4px; margin: 0 0 12px; }
-      .section { padding: 13px 3px; }
-      nav a { margin: 0 7px; }
-      .gallery img { width: 98vw; height: 120px; }
-      .header h1 { font-size: 1.4rem; }
+      .container {
+        border-radius: 4px;
+        margin: 0 0 12px;
+      }
+      .section {
+        padding: 13px 8px;
+      }
+      nav a {
+        margin: 0 7px;
+        font-size: 0.95rem;
+      }
+      .gallery img {
+        width: 98vw;
+        height: 120px;
+      }
+      .header h1 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
@@ -274,7 +326,7 @@
   <div class="container" id="gj-homepage">
     <!-- ---------- Header ---------- -->
     <div class="header">
-      <img src="GJNew.svg" class="logo-svg" alt="Logo SVG" width="80" height="65">
+      <img src="GJNew.svg" class="logo-svg" alt="Logo SVG" width="80" height="65" />
       <h1>Grand Junction (GJ)</h1>
       <div class="subtitle">The Grand Junction of Electrical & Plumbing Services</div>
     </div>
@@ -304,8 +356,7 @@
           project as an opportunity to add comfort, value, and peace of mind.
         </p>
         <div class="workloc">
-          <strong>Serving locations:</strong>
-          Tirupati&nbsp;|&nbsp;Renigunta&nbsp;|&nbsp;Chandragiri&nbsp;|&nbsp;Srikalahasthi&nbsp;and nearby areas
+          Serving locations: Tirupati&nbsp;|&nbsp;Renigunta&nbsp;|&nbsp;Chandragiri&nbsp;|&nbsp;Srikalahasthi&nbsp;and nearby areas
         </div>
       </div>
 
@@ -323,28 +374,52 @@
     <div class="section" id="services">
       <h2>Our Services</h2>
       <ul class="services-list">
-        <li><strong>Electrical Contracts</strong> Complete solutions for residential, commercial, and industrial projects.</li>
-        <li><strong>House Wiring</strong> Rewiring, new builds, switchboards, and safe upgrades.</li>
-        <li><strong>Plumbing Contracts</strong> Pipe fitting, leak repairs, bathroom and kitchen installations.</li>
-        <li><strong>UPS Installations</strong> Reliable setup and maintenance for uninterrupted power.</li>
-        <li><strong>Cable Laying &amp; Termination</strong> Precise installation and testing of power and data lines.</li>
-        <li><strong>Industrial Works</strong> Panel boards, control wiring, and emergency factory repairs.</li>
-        <li><strong>RO Plant Installation</strong> Installation and servicing of RO water purification systems.</li>
-        <li><strong>Solar Installations</strong> Rooftop PV systems and smart energy solutions.</li>
-        <li><strong>AC Installation</strong> Complete air-conditioning installs and servicing.</li>
-        <li><strong>Electrical Maintenance</strong> Troubleshooting, panel upgrades, and emergency services.</li>
-        <li><strong>Building Maintenance</strong> Full technical maintenance contracts for facilities.</li>
-        <li><strong>CCTV Installation</strong> Custom security-camera design and deployment.</li>
+        <li>
+          <strong>Electrical Contracts</strong> Complete solutions for residential, commercial, and industrial projects.
+        </li>
+        <li>
+          <strong>House Wiring</strong> Rewiring, new builds, switchboards, and safe upgrades.
+        </li>
+        <li>
+          <strong>Plumbing Contracts</strong> Pipe fitting, leak repairs, bathroom and kitchen installations.
+        </li>
+        <li>
+          <strong>UPS Installations</strong> Reliable setup and maintenance for uninterrupted power.
+        </li>
+        <li>
+          <strong>Cable Laying &amp; Termination</strong> Precise installation and testing of power and data lines.
+        </li>
+        <li>
+          <strong>Industrial Works</strong> Panel boards, control wiring, and emergency factory repairs.
+        </li>
+        <li>
+          <strong>RO Plant Installation</strong> Installation and servicing of RO water purification systems.
+        </li>
+        <li>
+          <strong>Solar Installations</strong> Rooftop PV systems and smart energy solutions.
+        </li>
+        <li>
+          <strong>AC Installation</strong> Complete air-conditioning installs and servicing.
+        </li>
+        <li>
+          <strong>Electrical Maintenance</strong> Troubleshooting, panel upgrades, and emergency services.
+        </li>
+        <li>
+          <strong>Building Maintenance</strong> Full technical maintenance contracts for facilities.
+        </li>
+        <li>
+          <strong>CCTV Installation</strong> Custom security-camera design and deployment.
+        </li>
       </ul>
     </div>
 
     <!-- ---------- Gallery ---------- -->
     <div class="section gallery" id="gallery">
       <h2>Gallery</h2>
-      <img src="house-wiring.png" alt="House wiring project">
-      <img src="plumbing.png" alt="Plumbing work">
-      <img src="solarinstallation.jpg" alt="Solar installation">
-      <img src="CCTV.jpg" alt="CCTV setup">
+      <img src="house-wiring.png" alt="House wiring project" />
+      <img src="plumbing.png" alt="Plumbing work" />
+      <img src="solarinstallation.jpg" alt="Solar installation" />
+      <img src="CCTV.jpg" alt="CCTV setup" />
     </div>
 
     <!-- ---------- Testimonials ---------- -->
@@ -367,12 +442,12 @@
     <!-- ---------- Contact Section ---------- -->
     <div class="section" id="contact">
       <h2>Contact Us</h2>
-      <form class="contact-form">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for contacting Grand Junction! We will get back to you shortly.');">
         <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" autocomplete="off" required>
+        <input type="text" id="name" name="name" autocomplete="off" required />
 
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" autocomplete="off" required>
+        <input type="email" id="email" name="email" autocomplete="off" required />
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="3" required></textarea>
@@ -396,7 +471,7 @@
       const sections = document.querySelectorAll('.section');
       function reveal() {
         const trigger = window.innerHeight * 0.95;
-        sections.forEach(section => {
+        sections.forEach((section) => {
           const top = section.getBoundingClientRect().top;
           if (top < trigger) section.classList.add('visible');
         });
@@ -405,15 +480,15 @@
       reveal();
     });
 
-    // (Optional) Smooth scroll for navigation
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
+    // Smooth scroll for navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
+        if (target) {
           e.preventDefault();
           window.scrollTo({
-            top: target.offsetTop-20,
-            behavior: 'smooth'
+            top: target.offsetTop - 20,
+            behavior: 'smooth',
           });
         }
       });
