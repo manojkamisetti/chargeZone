@@ -24,6 +24,7 @@
     transition: opacity 0.9s;
     padding: 12px 10px;
     box-sizing: border-box;
+    perspective: 800px;
   }
 
   /* Header */
@@ -62,10 +63,18 @@
     margin: 0 8px;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: transform 0.22s ease, color 0.22s ease;
+    will-change: transform, color;
   }
-  nav a:hover {
-    color: #1a385e;
+  nav a:hover,
+  nav a:focus {
+    transform: scale(1.1);
+    color: #064285;
+    outline: none;
+  }
+  nav a:focus-visible {
+    outline: 2px solid #064285;
+    outline-offset: 3px;
   }
 
   /* Sections */
@@ -88,7 +97,7 @@
     flex: none;
   }
 
-  /* Services List - full width stacked */
+  /* Services List - full width stacked and 3D interactive effects */
   .services-list {
     display: flex;
     flex-direction: column;
@@ -105,6 +114,21 @@
     width: 100%;
     box-sizing: border-box;
     min-height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    outline-offset: 4px;
+  }
+  .services-list li:hover,
+  .services-list li:focus-within {
+    transform: translateZ(15px) translateY(-6px) scale(1.035);
+    box-shadow: 0 16px 32px rgba(20, 90, 180, 0.2);
+    outline: none;
+  }
+  .services-list li:focus-visible {
+    outline: 2px solid #064285;
+    outline-offset: 4px;
   }
   .services-list strong {
     color: #0284db;
@@ -145,7 +169,7 @@
     margin-right: 6px;
   }
 
-  /* Gallery - stacked, full width */
+  /* Gallery - stacked, full width and 3D effects */
   .gallery {
     display: flex;
     flex-direction: column;
@@ -161,9 +185,23 @@
     border-radius: 7px;
     object-fit: cover;
     box-shadow: 0 2px 8px rgba(90, 145, 215, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+    cursor: pointer;
+    transform-style: preserve-3d;
+  }
+  .gallery img:hover,
+  .gallery img:focus {
+    transform: translateZ(20px) translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(20, 90, 180, 0.25);
+    outline: none;
+  }
+  .gallery img:focus-visible {
+    outline: 3px solid #064285;
+    outline-offset: 3px;
   }
 
-  /* Testimonials */
+  /* Testimonials with 3D effect */
   .testimonials {
     margin-top: 14px;
     padding: 0 10px;
@@ -179,6 +217,20 @@
     font-size: 0.9rem;
     margin-left: 0;
     margin-right: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    cursor: default;
+    transform-style: preserve-3d;
+  }
+  .testimonial:hover,
+  .testimonial:focus {
+    transform: translateZ(10px) translateY(-5px);
+    box-shadow: 0 14px 30px rgba(20, 90, 180, 0.18);
+    outline: none;
+  }
+  .testimonial:focus-visible {
+    outline: 2px solid #064285;
+    outline-offset: 3px;
   }
   .testimonial .name {
     display: block;
@@ -242,45 +294,42 @@
     <section class="section" id="services" aria-labelledby="services-title">
       <h2 id="services-title">Our Services</h2>
       <ul class="services-list">
-        <li><strong>Electrical Contracts</strong> Complete solutions for residential, commercial, and industrial projects.</li>
-        <li><strong>House Wiring</strong> Rewiring, new builds, switchboards, and safe upgrades.</li>
-        <li><strong>Plumbing Contracts</strong> Pipe fitting, leak repairs, bathroom and kitchen installations.</li>
-        <li><strong>UPS Installations</strong> Reliable setup and maintenance for uninterrupted power.</li>
-        <li><strong>Cable Laying &amp; Termination</strong> Precise installation and testing of power and data lines.</li>
-        <li><strong>Industrial Works</strong> Panel boards, control wiring, and emergency factory repairs.</li>
-        <li><strong>RO Plant Installation</strong> Installation and servicing of RO water purification systems.</li>
-        <li><strong>Solar Installations</strong> Rooftop PV systems and smart energy solutions.</li>
-        <li><strong>AC Installation</strong> Complete air-conditioning installs and servicing.</li>
-        <li><strong>Electrical Maintenance</strong> Troubleshooting, panel upgrades, and emergency services.</li>
-        <li><strong>Building Maintenance</strong> Full technical maintenance contracts for facilities.</li>
-        <li><strong>CCTV Installation</strong> Custom security-camera design and deployment.</li>
+        <li tabindex="0"><strong>Electrical Contracts</strong> Complete solutions for residential, commercial, and industrial projects.</li>
+        <li tabindex="0"><strong>House Wiring</strong> Rewiring, new builds, switchboards, and safe upgrades.</li>
+        <li tabindex="0"><strong>Plumbing Contracts</strong> Pipe fitting, leak repairs, bathroom and kitchen installations.</li>
+        <li tabindex="0"><strong>UPS Installations</strong> Reliable setup and maintenance for uninterrupted power.</li>
+        <li tabindex="0"><strong>Cable Laying &amp; Termination</strong> Precise installation and testing of power and data lines.</li>
+        <li tabindex="0"><strong>Industrial Works</strong> Panel boards, control wiring, and emergency factory repairs.</li>
+        <li tabindex="0"><strong>RO Plant Installation</strong> Installation and servicing of RO water purification systems.</li>
+        <li tabindex="0"><strong>Solar Installations</strong> Rooftop PV systems and smart energy solutions.</li>
+        <li tabindex="0"><strong>AC Installation</strong> Complete air-conditioning installs and servicing.</li>
+        <li tabindex="0"><strong>Electrical Maintenance</strong> Troubleshooting, panel upgrades, and emergency services.</li>
+        <li tabindex="0"><strong>Building Maintenance</strong> Full technical maintenance contracts for facilities.</li>
+        <li tabindex="0"><strong>CCTV Installation</strong> Custom security-camera design and deployment.</li>
       </ul>
     </section>
 
     <!-- ---------- Gallery ---------- -->
     <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
       <h2 id="gallery-title">Gallery</h2>
-      <img src="house-wiring.png" alt="House wiring project" />
-      <img src="plumbing.png" alt="Plumbing work" />
-      <img src="solarinstallation.jpg" alt="Solar installation" />
-      <img src="CCTV.jpg" alt="CCTV setup" />
+      <img src="house-wiring.png" alt="House wiring project" tabindex="0" />
+      <img src="plumbing.png" alt="Plumbing work" tabindex="0" />
+      <img src="solarinstallation.jpg" alt="Solar installation" tabindex="0" />
+      <img src="CCTV.jpg" alt="CCTV setup" tabindex="0" />
     </section>
 
     <!-- ---------- Testimonials ---------- -->
     <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
       <h2 id="testimonials-title">What Our Clients Say</h2>
-
-      <blockquote class="testimonial">
+      <blockquote class="testimonial" tabindex="0">
         "Grand Junction upgraded our entire office wiring quick, professional, and absolutely reliable."
         <span class="name">Ramesh Kumar, Srikalahasthi</span>
       </blockquote>
-
-      <blockquote class="testimonial">
+      <blockquote class="testimonial" tabindex="0">
         "The plumbing team fixed a long-standing leak efficiently. Highly recommended for courteous, neat service."
         <span class="name">Meenakshi M., Tirupati</span>
       </blockquote>
-
-      <blockquote class="testimonial">
+      <blockquote class="testimonial" tabindex="0">
         "Prompt response and good value. Trust worthy electricians for home and shop."
         <span class="name">Srikanth A., Chandragiri</span>
       </blockquote>
