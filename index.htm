@@ -1,321 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>Grand Junction - Electrical & Plumbing Services</title>
 <style>
-/* ---------- Base Styles ---------- */
-body {
-background: #f7fbff;
-font-family: 'Segoe UI', Arial, sans-serif;
-color: #152c42;
-margin: 0;
-padding: 0;
-}
-.container {
-max-width: 1300px;
-margin: 34px auto;
-background: #fff;
-border-radius: 12px;
-box-shadow: 0 7px 32px rgba(99, 153, 220, 0.11);
-overflow: hidden;
-opacity: 0; /* for fade-in */
-transition: opacity 0.9s;
-}
+  body {
+    background: #f7fbff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #152c42;
+    margin: 0;
+    padding: 0;
+  }
 
-/* ---------- Header ---------- */
-.header {
-background: linear-gradient(90deg, #064285 68%, #11a0ed 100%);
-color: #fff;
-padding: 50px 36px 36px;
-text-align: center;
-}
-.logo-svg {
-max-width: 80px;
-margin-bottom: 18px;
-}
-.header h1 {
-margin: 0 0 9px;
-font-size: 2.6rem;
-font-weight: 700;
-letter-spacing: 1px;
-}
-.header .subtitle {
-font-size: 1.15rem;
-font-style: italic;
-opacity: 0.95;
-}
+  .container {
+    max-width: 100vw;
+    margin: 12px auto 12px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 7px 20px rgba(99, 153, 220, 0.11);
+    overflow: hidden;
+    opacity: 0; /* for fade-in */
+    transition: opacity 0.9s;
+    padding: 12px 10px;
+    box-sizing: border-box;
+  }
 
-/* ---------- Navigation ---------- */
-nav {
-background: #eaf5ff;
-padding: 11px 0;
-text-align: center;
-}
-nav a {
-text-decoration: none;
-color: #086ae4;
-margin: 0 23px;
-font-size: 1.02rem;
-font-weight: 500;
-transition: color 0.2s;
-}
-nav a:hover { color: #1a385e; }
+  /* Header */
+  .header {
+    background: linear-gradient(90deg, #064285 68%, #11a0ed 100%);
+    color: #fff;
+    padding: 30px 20px 20px;
+    text-align: center;
+  }
+  .logo-svg {
+    max-width: 60px;
+    margin: 0 auto 12px;
+    display: block;
+  }
+  .header h1 {
+    margin: 0 0 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .header .subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.95;
+  }
 
-/* ---------- Sections ---------- */
-.section {
-padding: 38px 42px;
-border-bottom: 1px solid #e0eded;
-}
-.section:last-child { border-bottom: none; }
+  /* Navigation */
+  nav {
+    background: #eaf5ff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  nav a {
+    text-decoration: none;
+    color: #086ae4;
+    margin: 0 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover {
+    color: #1a385e;
+  }
 
-/* ---------- About ---------- */
-.about {
-display: flex;
-flex-wrap: wrap;
-gap: 32px;
-}
-.about-text { flex: 2; min-width: 260px; }
-.about-contact { flex: 1; min-width: 200px; }
+  /* Sections */
+  .section {
+    padding: 15px 8px;
+    border-bottom: 1px solid #e0eded;
+  }
+  .section:last-child {
+    border-bottom: none;
+  }
 
-/* ---------- Services ---------- */
-.services-list {
-display: flex;
-flex-wrap: wrap;
-gap: 26px;
-list-style: none;
-padding: 0;
-margin: 0;
-justify-content: center;
-}
-.services-list li {
-background: #f1f7ff;
-border-radius: 10px;
-box-shadow: 0 1px 5px rgba(90,145,215,0.05);
-padding: 19px 18px;
-width: 280px;
-min-height: 120px;
-}
-.services-list strong {
-color: #0284db;
-display: block;
-font-size: 1.04rem;
-margin-bottom: 5px;
-}
+  /* About - stack vertically */
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-text, .about-contact {
+    min-width: auto;
+    flex: none;
+  }
 
-/* ---------- Work Locations ---------- */
-.workloc {
-background: #e4f5fd;
-margin-top: 15px;
-border-radius: 6px;
-padding: 8px;
-color: #245999;
-font-size: 1.05rem;
-text-align: center;
-white-space: nowrap; /* keep on one line */
-overflow: hidden; /* optional: hide overflow */
-text-overflow: ellipsis; /* optional: add … if too long */
-}
+  /* Services List - full width stacked */
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .services-list li {
+    background: #f1f7ff;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(90, 145, 215, 0.05);
+    padding: 18px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: auto;
+  }
+  .services-list strong {
+    color: #0284db;
+    display: block;
+    font-size: 1.02rem;
+    margin-bottom: 4px;
+  }
 
-/* ---------- Contact Info ---------- */
-.contactinfo {
-background: #f4fbff;
-border-radius: 6px;
-padding: 22px;
-color: #204072;
-font-size: 1.01rem;
-}
-.contactinfo span { display: block; margin-bottom: 3px; }
-.contactinfo .label {
-font-weight: bold;
-color: #0676be;
-margin-right: 6px;
-}
+  /* Work locations */
+  .workloc {
+    background: #e4f5fd;
+    margin-top: 15px;
+    border-radius: 6px;
+    padding: 8px;
+    color: #245999;
+    font-size: 1rem;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
 
-/* ---------- Gallery ---------- */
-.gallery {
-display: flex;
-flex-wrap: wrap;
-gap: 22px;
-justify-content: center;
-}
-.gallery img {
-background: #e6f3fc;
-width: 190px;
-height: 120px;
-border-radius: 7px;
-object-fit: cover;
-box-shadow: 0 2px 8px rgba(90,145,215,0.08);
-}
+  /* Contact Info */
+  .contactinfo {
+    background: #f4fbff;
+    border-radius: 6px;
+    padding: 18px;
+    color: #204072;
+    font-size: 0.95rem;
+  }
+  .contactinfo span {
+    display: block;
+    margin-bottom: 3px;
+  }
+  .contactinfo .label {
+    font-weight: bold;
+    color: #0676be;
+    margin-right: 6px;
+  }
 
-/* ---------- Testimonials ---------- */
-.testimonials { margin-top: 14px; }
-.testimonial {
-background: #edf5fd;
-border-radius: 7px;
-padding: 18px 16px;
-margin-bottom: 14px;
-font-style: italic;
-color: #285088;
-max-width: 600px;
-}
-.testimonial .name {
-display: block;
-margin-top: 7px;
-font-style: normal;
-font-weight: 500;
-color: #0b3565;
-font-size: 0.97rem;
-}
+  /* Gallery - stacked, full width */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .gallery img {
+    background: #e6f3fc;
+    width: 100%;
+    max-height: 160px;
+    border-radius: 7px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(90, 145, 215, 0.08);
+  }
 
-/* ---------- Contact Form ---------- */
-.contact-form {
-background: #f5faff;
-border-radius: 8px;
-padding: 24px 22px 16px;
-max-width: 410px;
-margin: 18px auto 0;
-}
-.contact-form label,
-.contact-form input,
-.contact-form textarea,
-.contact-form button {
-display: block;
-width: 100%;
-margin-bottom: 12px;
-font-size: 0.99rem;
-}
-.contact-form button {
-background: #079fe2;
-color: #fff;
-border: none;
-border-radius: 5px;
-padding: 10px;
-font-size: 1.06rem;
-cursor: pointer;
-font-weight: 600;
-transition: background 0.24s;
-}
-.contact-form button:hover { background: #1163b1; }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-.container { max-width: 98vw; }
-.section { padding: 24px 10px; }
-.about { flex-direction: column; gap: 0; }
-}
-@media (max-width: 600px) {
-.container { border-radius: 4px; margin: 0 0 12px; }
-.section { padding: 13px 3px; }
-nav a { margin: 0 7px; }
-.gallery img { width: 98vw; height: 120px; }
-.header h1 { font-size: 1.4rem; }
-}
+  /* Testimonials */
+  .testimonials {
+    margin-top: 14px;
+    padding: 0 10px;
+  }
+  .testimonial {
+    background: #edf5fd;
+    border-radius: 7px;
+    padding: 14px 12px;
+    margin-bottom: 14px;
+    font-style: italic;
+    color: #285088;
+    max-width: 100%;
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .testimonial .name {
+    display: block;
+    margin-top: 7px;
+    font-style: normal;
+    font-weight: 500;
+    color: #0b3565;
+    font-size: 0.9rem;
+  }
 </style>
 </head>
 <body>
-<div class="container" id="gj-homepage">
-<!-- ---------- Header ---------- -->
-<div class="header">
-<img src="GJNew.svg" alt="Logo SVG" width="80" height="65">
-<path d="M30 28L27 33H33L30 38" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-<h1>Grand Junction (GJ)</h1>
-<div class="subtitle">The Grand Junction of Electrical & Plumbing Services</div>
-</div>
+  <div class="container" id="gj-homepage">
+    <!-- ---------- Header ---------- -->
+    <header class="header" role="banner">
+      <img src="GJNew.svg" alt="Grand Junction Logo" class="logo-svg" width="60" height="48" />
+      <h1>Grand Junction (GJ)</h1>
+      <div class="subtitle">The Grand Junction of Electrical &amp; Plumbing Services</div>
+    </header>
 
-<!-- ---------- Navigation ---------- -->
+    <!-- ---------- Navigation ---------- -->
+    <nav role="navigation" aria-label="Primary Navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Testimonials</a>
+    </nav>
 
+    <!-- ---------- About ---------- -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about-text">
+        <h2 id="about-title">About Grand Junction</h2>
+        <p>
+          With decades of experience, Grand Junction (GJ) Electrical &amp; Plumbing Services is a leading provider
+          of <b>reliable electrical and plumbing solutions</b>. We serve clients across
+          <b>Tirupati, Renigunta, Chandragiri, Srikalahasthi</b>, and surrounding regions, renowned for our prompt
+          service, safety focus, and uncompromising quality.
+        </p>
+        <p>
+          Our certified professionals leverage modern tools and transparent practices to deliver results that
+          stand the test of time. Whether it is an industrial contract or an essential home repair, we view every
+          project as an opportunity to add comfort, value, and peace of mind.
+        </p>
+        <div class="workloc" aria-label="Serving locations">
+          <strong>Serving locations:</strong>
+          Tirupati&nbsp;|&nbsp;Renigunta&nbsp;|&nbsp;Chandragiri&nbsp;|&nbsp;Srikalahasthi&nbsp;and nearby areas
+        </div>
+      </div>
 
-<!-- ---------- About ---------- -->
-<div class="section about" id="about">
-<div class="about-text">
-<h2>About Grand Junction</h2>
-<p>
-With decades of experience, Grand Junction (GJ) Electrical & Plumbing Services is a leading provider
-of <b>reliable electrical and plumbing solutions</b>. We serve clients across
-<b>Tirupati, Renigunta, Chandragiri, Srikalahasthi</b>, and surrounding regions, renowned for our prompt
-service, safety focus, and uncompromising quality.
-</p>
-<p>
-Our certified professionals leverage modern tools and transparent practices to deliver results that
-stand the test of time. Whether it is an industrial contract or an essential home repair, we view every
-project as an opportunity to add comfort, value, and peace of mind.
-</p>
-<div class="workloc">
-<strong>Serving locations:</strong>
-Tirupati&nbsp;|&nbsp;Renigunta&nbsp;|&nbsp;Chandragiri&nbsp;|&nbsp;Srikalahasthi&nbsp;and nearby areas
-</div>
-</div>
+      <aside class="about-contact" aria-label="Contact Information">
+        <div class="contactinfo">
+          <span><span class="label">Proprietor:</span> D. Anil Gaffur</span>
+          <span><span class="label">Phone:</span> +91&nbsp;93980&nbsp;60040</span>
+          <span><span class="label">Email:</span> anilgaffur78@gmail.com</span>
+          <span><span class="label">Address:</span> Renigunta, Tirupati District, Andhra Pradesh 517520</span>
+        </div>
+      </aside>
+    </section>
 
-<div class="about-contact">
-<div class="contactinfo">
-<span><span class="label">Proprietor:</span> D. Anil Gaffur</span>
-<span><span class="label">Phone:</span> +91&nbsp;93980&nbsp;60040</span>
-<span><span class="label">Email:</span> anilgaffur78@gmail.com</span>
-<span><span class="label">Address:</span> Renigunta, Tirupati District, Andhra Pradesh 517520</span>
-</div>
-</div>
-</div>
+    <!-- ---------- Services ---------- -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Our Services</h2>
+      <ul class="services-list">
+        <li><strong>Electrical Contracts</strong> Complete solutions for residential, commercial, and industrial projects.</li>
+        <li><strong>House Wiring</strong> Rewiring, new builds, switchboards, and safe upgrades.</li>
+        <li><strong>Plumbing Contracts</strong> Pipe fitting, leak repairs, bathroom and kitchen installations.</li>
+        <li><strong>UPS Installations</strong> Reliable setup and maintenance for uninterrupted power.</li>
+        <li><strong>Cable Laying &amp; Termination</strong> Precise installation and testing of power and data lines.</li>
+        <li><strong>Industrial Works</strong> Panel boards, control wiring, and emergency factory repairs.</li>
+        <li><strong>RO Plant Installation</strong> Installation and servicing of RO water purification systems.</li>
+        <li><strong>Solar Installations</strong> Rooftop PV systems and smart energy solutions.</li>
+        <li><strong>AC Installation</strong> Complete air-conditioning installs and servicing.</li>
+        <li><strong>Electrical Maintenance</strong> Troubleshooting, panel upgrades, and emergency services.</li>
+        <li><strong>Building Maintenance</strong> Full technical maintenance contracts for facilities.</li>
+        <li><strong>CCTV Installation</strong> Custom security-camera design and deployment.</li>
+      </ul>
+    </section>
 
-<!-- ---------- Services ---------- -->
-<div class="section" id="services">
-<h2>Our Services</h2>
-<ul class="services-list">
-<li><strong>Electrical Contracts</strong> Complete solutions for residential, commercial, and industrial projects.</li>
-<li><strong>House Wiring</strong> Rewiring, new builds, switchboards, and safe upgrades.</li>
-<li><strong>Plumbing Contracts</strong> Pipe fitting, leak repairs, bathroom and kitchen installations.</li>
-<li><strong>UPS Installations</strong> Reliable setup and maintenance for uninterrupted power.</li>
-<li><strong>Cable Laying &amp; Termination</strong> Precise installation and testing of power and data lines.</li>
-<li><strong>Industrial Works</strong> Panel boards, control wiring, and emergency factory repairs.</li>
-<li><strong>RO Plant Installation</strong> Installation and servicing of RO water purification systems.</li>
-<li><strong>Solar Installations</strong> Rooftop PV systems and smart energy solutions.</li>
-<li><strong>AC Installation</strong> Complete air-conditioning installs and servicing.</li>
-<li><strong>Electrical Maintenance</strong> Troubleshooting, panel upgrades, and emergency services.</li>
-<li><strong>Building Maintenance</strong> Full technical maintenance contracts for facilities.</li>
-<li><strong>CCTV Installation</strong> Custom security-camera design and deployment.</li>
-</ul>
-</div>
+    <!-- ---------- Gallery ---------- -->
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Gallery</h2>
+      <img src="house-wiring.png" alt="House wiring project" />
+      <img src="plumbing.png" alt="Plumbing work" />
+      <img src="solarinstallation.jpg" alt="Solar installation" />
+      <img src="CCTV.jpg" alt="CCTV setup" />
+    </section>
 
-<!-- ---------- Gallery ---------- -->
-<div class="section gallery" id="gallery">
-<h2>Gallery</h2>
-<img src="house-wiring.png" alt="House wiring project">
-<img src="plumbing.png" alt="Plumbing work">
-<img src="solarinstallation.jpg" alt="Solar installation">
-<img src="CCTV.jpg" alt="CCTV setup">
-</div>
+    <!-- ---------- Testimonials ---------- -->
+    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title">What Our Clients Say</h2>
 
-<!-- ---------- Testimonials ---------- -->
-<div class="section testimonials" id="testimonials">
-<h2>What Our Clients Say</h2>
+      <blockquote class="testimonial">
+        "Grand Junction upgraded our entire office wiring quick, professional, and absolutely reliable."
+        <span class="name">Ramesh Kumar, Srikalahasthi</span>
+      </blockquote>
 
-<div class="testimonial">
-"Grand Junction upgraded our entire office wiring quick, professional, and absolutely reliable."
-<span class="name"> Ramesh Kumar, Srikalahasthi</span>
-</div>
+      <blockquote class="testimonial">
+        "The plumbing team fixed a long-standing leak efficiently. Highly recommended for courteous, neat service."
+        <span class="name">Meenakshi M., Tirupati</span>
+      </blockquote>
 
-<div class="testimonial">
-"The plumbing team fixed a long-standing leak efficiently. Highly recommended for courteous, neat service."
-<span class="name"> Meenakshi M., Tirupati</span>
-</div>
+      <blockquote class="testimonial">
+        "Prompt response and good value. Trust worthy electricians for home and shop."
+        <span class="name">Srikanth A., Chandragiri</span>
+      </blockquote>
+    </section>
+  </div>
 
-<div class="testimonial">
-"Prompt response and good value. Trust worthy electricians for home and shop."
-<span class="name"> Srikanth A., Chandragiri</span>
-</div>
-</div>
-
-
-
-<!-- ---------- Fade-in Effect ---------- -->
-<script>
-window.onload = function () {
-setTimeout(function () {
-document.getElementById('gj-homepage').style.opacity = 1;
-}, 200);
-};
-</script>
+  <!-- ---------- Fade-in Effect ---------- -->
+  <script>
+    window.onload = function () {
+      setTimeout(function () {
+        document.getElementById('gj-homepage').style.opacity = 1;
+      }, 200);
+    };
+  </script>
 </body>
 </html>
