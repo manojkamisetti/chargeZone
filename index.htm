@@ -1,265 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Grand Junction - Electrical & Plumbing Services</title>
-<style>
-  body {
-    background: #f7fbff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #152c42;
-    margin: 0;
-    padding: 0;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grand Junction - Electrical & Plumbing Services</title>
+  <meta name="description" content="Grand Junction Electrical & Plumbing Services offers reliable solutions across Tirupati, Renigunta, Chandragiri, and Srikalahasthi. Contact us for wiring, plumbing, solar, and more." />
+  <link rel="canonical" href="https://grandjunction.netlify.app/" />
+  <link rel="icon" href="favicons/favicon.ico" />
+  <style>
+    body {
+      background: #f7fbff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #152c42;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 100vw;
+      margin: 12px auto;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 7px 20px rgba(99, 153, 220, 0.11);
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.9s;
+      padding: 12px 10px;
+      box-sizing: border-box;
+      perspective: 800px;
+    }
+    .header {
+      background: linear-gradient(90deg, #064285 68%, #11a0ed 100%);
+      color: #fff;
+      padding: 30px 20px 20px;
+      text-align: center;
+    }
+    .logo-svg {
+      max-width: 60px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+    .header h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .header .subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      opacity: 0.95;
+    }
 
-  .container {
-    max-width: 100vw;
-    margin: 12px auto 12px;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 7px 20px rgba(99, 153, 220, 0.11);
-    overflow: hidden;
-    opacity: 0; /* for fade-in */
-    transition: opacity 0.9s;
-    padding: 12px 10px;
-    box-sizing: border-box;
-    perspective: 800px;
-  }
+    /* --- Start Enhanced Navigation Hover Effects --- */
+    nav {
+      background: #eaf5ff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #086ae4;
+      margin: 0 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.2s;
+    }
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #11a0ed;
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #064285;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    nav a:focus-visible {
+      outline: 2px solid #064285;
+      outline-offset: 3px;
+    }
+    /* --- End Navigation --- */
 
-  /* Header */
-  .header {
-    background: linear-gradient(90deg, #064285 68%, #11a0ed 100%);
-    color: #fff;
-    padding: 30px 20px 20px;
-    text-align: center;
-  }
-  .logo-svg {
-    max-width: 60px;
-    margin: 0 auto 12px;
-    display: block;
-  }
-  .header h1 {
-    margin: 0 0 6px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .header .subtitle {
-    font-size: 1rem;
-    font-style: italic;
-    opacity: 0.95;
-  }
+    .section { padding: 15px 8px; border-bottom: 1px solid #e0eded;}
+    .section:last-child { border-bottom: none; }
+    .about { display: flex; flex-direction: column; gap: 20px; }
+    .about-text, .about-contact { min-width: auto; flex: none; }
+    .workloc { background: #e4f5fd; margin-top: 15px; border-radius: 6px; padding: 8px; color: #245999; font-size: 1rem; text-align: center; }
+    .contactinfo { background: #f4fbff; border-radius: 6px; padding: 18px; color: #204072; font-size: 0.95rem; }
+    .contactinfo span { display: block; margin-bottom: 3px; }
+    .contactinfo .label { font-weight: bold; color: #0676be; margin-right: 6px; }
 
-  /* Navigation */
-  nav {
-    background: #eaf5ff;
-    padding: 10px 0;
-    text-align: center;
-  }
-  nav a {
-    text-decoration: none;
-    color: #086ae4;
-    margin: 0 8px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: transform 0.22s ease, color 0.22s ease;
-    will-change: transform, color;
-  }
-  nav a:hover,
-  nav a:focus {
-    transform: scale(1.1);
-    color: #064285;
-    outline: none;
-  }
-  nav a:focus-visible {
-    outline: 2px solid #064285;
-    outline-offset: 3px;
-  }
+    /* --- Start Enhanced Services Hover Effects --- */
+    .services-list { display: flex; flex-direction: column; gap: 16px; list-style: none; padding: 0; margin: 0 auto; }
+    .services-list li {
+      background: #f1f7ff;
+      border-radius: 10px;
+      box-shadow: 0 1px 5px rgba(90, 145, 215, 0.05);
+      padding: 18px 16px;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: auto;
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      will-change: transform;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      border: 2px solid transparent;
+      outline-offset: 4px;
+    }
+    .services-list li:hover,
+    .services-list li:focus-within {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(20,90,180,0.25);
+      border: 2px solid #11a0ed;
+      background: #eaf6fe;
+      outline: none;
+    }
+    .services-list li:focus-visible {
+      outline: 2px solid #064285;
+      outline-offset: 4px;
+    }
+    .services-list strong {
+      color: #0284db;
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+    /* --- End Services List --- */
 
-  /* Sections */
-  .section {
-    padding: 15px 8px;
-    border-bottom: 1px solid #e0eded;
-  }
-  .section:last-child {
-    border-bottom: none;
-  }
+    /* --- Start Enhanced Gallery Hover Effects --- */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .gallery img {
+      background: #e6f3fc;
+      width: 100%;
+      max-height: 160px;
+      border-radius: 7px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(90, 145, 215, 0.08);
+      transition: transform 0.35s cubic-bezier(.4,2.39,.75,.71), box-shadow 0.35s;
+      will-change: transform;
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
+    .gallery img:hover,
+    .gallery img:focus {
+      transform: scale(1.07) rotateZ(-1deg);
+      box-shadow: 0 18px 38px rgba(10,70,170,0.18);
+      z-index: 2;
+      outline: none;
+    }
+    .gallery img:focus-visible {
+      outline: 3px solid #064285;
+      outline-offset: 3px;
+    }
+    /* --- End Gallery --- */
 
-  /* About - stack vertically */
-  .about {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .about-text, .about-contact {
-    min-width: auto;
-    flex: none;
-  }
-
-  /* Services List - full width stacked and 3D interactive effects */
-  .services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-  }
-  .services-list li {
-    background: #f1f7ff;
-    border-radius: 10px;
-    box-shadow: 0 1px 5px rgba(90, 145, 215, 0.05);
-    padding: 18px 16px;
-    width: 100%;
-    box-sizing: border-box;
-    min-height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    outline-offset: 4px;
-  }
-  .services-list li:hover,
-  .services-list li:focus-within {
-    transform: translateZ(15px) translateY(-6px) scale(1.035);
-    box-shadow: 0 16px 32px rgba(20, 90, 180, 0.2);
-    outline: none;
-  }
-  .services-list li:focus-visible {
-    outline: 2px solid #064285;
-    outline-offset: 4px;
-  }
-  .services-list strong {
-    color: #0284db;
-    display: block;
-    font-size: 1.02rem;
-    margin-bottom: 4px;
-  }
-
-  /* Work locations */
-  .workloc {
-    background: #e4f5fd;
-    margin-top: 15px;
-    border-radius: 6px;
-    padding: 8px;
-    color: #245999;
-    font-size: 1rem;
-    text-align: center;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
-  }
-
-  /* Contact Info */
-  .contactinfo {
-    background: #f4fbff;
-    border-radius: 6px;
-    padding: 18px;
-    color: #204072;
-    font-size: 0.95rem;
-  }
-  .contactinfo span {
-    display: block;
-    margin-bottom: 3px;
-  }
-  .contactinfo .label {
-    font-weight: bold;
-    color: #0676be;
-    margin-right: 6px;
-  }
-
-  /* Gallery - stacked, full width and 3D effects */
-  .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .gallery img {
-    background: #e6f3fc;
-    width: 100%;
-    max-height: 160px;
-    border-radius: 7px;
-    object-fit: cover;
-    box-shadow: 0 2px 8px rgba(90, 145, 215, 0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    will-change: transform;
-    cursor: pointer;
-    transform-style: preserve-3d;
-  }
-  .gallery img:hover,
-  .gallery img:focus {
-    transform: translateZ(20px) translateY(-8px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(20, 90, 180, 0.25);
-    outline: none;
-  }
-  .gallery img:focus-visible {
-    outline: 3px solid #064285;
-    outline-offset: 3px;
-  }
-
-  /* Testimonials with 3D effect */
-  .testimonials {
-    margin-top: 14px;
-    padding: 0 10px;
-  }
-  .testimonial {
-    background: #edf5fd;
-    border-radius: 7px;
-    padding: 14px 12px;
-    margin-bottom: 14px;
-    font-style: italic;
-    color: #285088;
-    max-width: 100%;
-    font-size: 0.9rem;
-    margin-left: 0;
-    margin-right: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform;
-    cursor: default;
-    transform-style: preserve-3d;
-  }
-  .testimonial:hover,
-  .testimonial:focus {
-    transform: translateZ(10px) translateY(-5px);
-    box-shadow: 0 14px 30px rgba(20, 90, 180, 0.18);
-    outline: none;
-  }
-  .testimonial:focus-visible {
-    outline: 2px solid #064285;
-    outline-offset: 3px;
-  }
-  .testimonial .name {
-    display: block;
-    margin-top: 7px;
-    font-style: normal;
-    font-weight: 500;
-    color: #0b3565;
-    font-size: 0.9rem;
-  }
-</style>
+    /* --- Start Enhanced Testimonial Hover --- */
+    .testimonials { margin-top: 14px; padding: 0 10px; }
+    .testimonial {
+      background: #edf5fd;
+      border-radius: 7px;
+      padding: 14px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+      color: #285088;
+      max-width: 100%;
+      font-size: 0.9rem;
+      margin-left: 0;
+      margin-right: 0;
+      transition: box-shadow 0.3s, background 0.3s;
+      will-change: box-shadow, background;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      box-shadow: 0 1px 5px rgba(20,90,180,0.06);
+    }
+    .testimonial:hover,
+    .testimonial:focus {
+      background: #d4eaff;
+      box-shadow: 0 10px 30px rgba(30,120,220,0.16);
+      outline: none;
+    }
+    .testimonial:focus-visible {
+      outline: 2px solid #064285;
+      outline-offset: 3px;
+    }
+    .testimonial .name {
+      display: block;
+      margin-top: 7px;
+      font-style: normal;
+      font-weight: 500;
+      color: #0b3565;
+      font-size: 0.9rem;
+    }
+    /* --- End Testimonial --- */
+  </style>
 </head>
 <body>
-  <div class="container" id="gj-homepage">
-    <!-- ---------- Header ---------- -->
+  <div class="container" id="gj-homepage" tabindex="-1" aria-live="polite" aria-label="Grand Junction home page">
     <header class="header" role="banner">
-      <img src="GJNew.svg" alt="Grand Junction Logo" class="logo-svg" width="60" height="48" />
+      <img src="GJNew.svg" alt="Grand Junction Logo" class="logo-svg" width="60" height="48" loading="lazy" />
       <h1>Grand Junction (GJ)</h1>
       <div class="subtitle">The Grand Junction of Electrical &amp; Plumbing Services</div>
     </header>
-
-    <!-- ---------- Navigation ---------- -->
     <nav role="navigation" aria-label="Primary Navigation">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#testimonials">Testimonials</a>
     </nav>
-
-    <!-- ---------- About ---------- -->
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="about-text">
         <h2 id="about-title">About Grand Junction</h2>
@@ -279,18 +243,15 @@
           Tirupati&nbsp;|&nbsp;Renigunta&nbsp;|&nbsp;Chandragiri&nbsp;|&nbsp;Srikalahasthi&nbsp;and nearby areas
         </div>
       </div>
-
       <aside class="about-contact" aria-label="Contact Information">
         <div class="contactinfo">
           <span><span class="label">Proprietor:</span> D. Anil Gaffur</span>
-          <span><span class="label">Phone:</span> +91&nbsp;93980&nbsp;60040</span>
-          <span><span class="label">Email:</span> anilgaffur78@gmail.com</span>
+          <span><span class="label">Phone:</span> <a href="tel:+919398060040" aria-label="Call phone number +91 93980 60040">+91&nbsp;93980&nbsp;60040</a></span>
+          <span><span class="label">Email:</span> <a href="mailto:anilgaffur78@gmail.com" aria-label="Send email to anilgaffur78@gmail.com">anilgaffur78@gmail.com</a></span>
           <span><span class="label">Address:</span> Renigunta, Tirupati District, Andhra Pradesh 517520</span>
         </div>
       </aside>
     </section>
-
-    <!-- ---------- Services ---------- -->
     <section class="section" id="services" aria-labelledby="services-title">
       <h2 id="services-title">Our Services</h2>
       <ul class="services-list">
@@ -308,39 +269,35 @@
         <li tabindex="0"><strong>CCTV Installation</strong> Custom security-camera design and deployment.</li>
       </ul>
     </section>
-
-    <!-- ---------- Gallery ---------- -->
     <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
       <h2 id="gallery-title">Gallery</h2>
-      <img src="house-wiring.png" alt="House wiring project" tabindex="0" />
-      <img src="plumbing.png" alt="Plumbing work" tabindex="0" />
-      <img src="solarinstallation.jpg" alt="Solar installation" tabindex="0" />
-      <img src="CCTV.jpg" alt="CCTV setup" tabindex="0" />
+      <img src="house-wiring.png" alt="House wiring project" tabindex="0" loading="lazy" />
+      <img src="plumbing.png" alt="Plumbing work" tabindex="0" loading="lazy" />
+      <img src="solarinstallation.jpg" alt="Solar installation" tabindex="0" loading="lazy" />
+      <img src="CCTV.jpg" alt="CCTV setup" tabindex="0" loading="lazy" />
     </section>
-
-    <!-- ---------- Testimonials ---------- -->
     <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
       <h2 id="testimonials-title">What Our Clients Say</h2>
-      <blockquote class="testimonial" tabindex="0">
+      <blockquote class="testimonial" tabindex="0" role="quote">
         "Grand Junction upgraded our entire office wiring quick, professional, and absolutely reliable."
         <span class="name">Ramesh Kumar, Srikalahasthi</span>
       </blockquote>
-      <blockquote class="testimonial" tabindex="0">
+      <blockquote class="testimonial" tabindex="0" role="quote">
         "The plumbing team fixed a long-standing leak efficiently. Highly recommended for courteous, neat service."
         <span class="name">Meenakshi M., Tirupati</span>
       </blockquote>
-      <blockquote class="testimonial" tabindex="0">
+      <blockquote class="testimonial" tabindex="0" role="quote">
         "Prompt response and good value. Trust worthy electricians for home and shop."
         <span class="name">Srikanth A., Chandragiri</span>
       </blockquote>
     </section>
   </div>
-
-  <!-- ---------- Fade-in Effect ---------- -->
   <script>
     window.onload = function () {
       setTimeout(function () {
-        document.getElementById('gj-homepage').style.opacity = 1;
+        const container = document.getElementById('gj-homepage');
+        container.style.opacity = 1;
+        container.focus();
       }, 200);
     };
   </script>
